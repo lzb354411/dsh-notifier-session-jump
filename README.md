@@ -2,7 +2,25 @@
 
 # dsh-notifier-session-jump
 
-> 给 DSH 插件 `@wingsky-1/dsh-notifier` 的一个本地补丁：**点击通知 → 直接切到那条通知所属的会话**。
+> 给 DSH 插件 `@wingsky-1/dsh-notifier` 的一个补丁：**点击通知 → 直接切到那条通知所属的会话**。
+
+## 〇、源自上游 · 致谢
+
+**本项目是基于 [`wingsky-1/dsh-plugin-hub`](https://github.com/wingsky-1/dsh-plugin-hub) 里
+`packages/dsh-notifier`（即 npm 包 [`@wingsky-1/dsh-notifier`](https://www.npmjs.com/package/@wingsky-1/dsh-notifier)）
+所做的改造／补丁，不是从零写的独立插件。**
+
+- **原插件的一切功劳归原作者 wingsky-1**：事件采集、筛选裁决、多通道投递（浏览器通知 / 系统 toast / Bark / Webhook）、
+  设置页、通知历史、降级与容错——这些**全部**是上游做好的；本仓库只是在其之上加了一项增量能力。
+- **特别感谢 wingsky-1** 把这个插件做出来并开源（MIT），让「点通知跳会话」这件事有地方可以落脚。
+- **本仓库只包含**：那一项增量能力的补丁定义与工具（应用 / 还原 / 复核）、验证台架与过程文档；
+  **不包含**上游插件的源码或编译产物，**也不重新分发**它（详见 [`NOTICE.md`](NOTICE.md)）。
+- 上游目前处于**有限维护**状态（新功能暂缓），因此这里的做法是**本地补丁**，而不是向上游提交源码改动。
+  若上游日后恢复更新并愿意接纳该能力，欢迎把这套改动改写成源码版贡献回去。
+
+> This project is a patch **derived from** the upstream `@wingsky-1/dsh-notifier`
+> (part of [`wingsky-1/dsh-plugin-hub`](https://github.com/wingsky-1/dsh-plugin-hub), MIT, by wingsky-1).
+> All credit for the original plugin goes to the upstream author. Many thanks to **wingsky-1**.
 
 ## 一、项目说明
 
