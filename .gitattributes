@@ -1,0 +1,16 @@
+# 行尾与编码策略（定死，避免不同机器 checkout 出不同结果）
+#
+# 为什么要写这个：`patch\*.ps1` 必须保持 **UTF-8 带 BOM**（本机 Windows PowerShell 5.1
+# 对无 BOM 脚本按 GBK 解码 → 中文乱码 → 语法报错）。git 的 text=auto 只动行尾、不动 BOM，
+# 但把策略写清楚可以让任何人 clone 之后拿到一致的字节。
+
+* text=auto eol=lf
+
+# Windows 脚本用 CRLF（PowerShell/cmd 的本地习惯），并保持为文本
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+
+# 明确不当作文本处理
+*.png binary
+*.jpg binary
+*.ico binary
